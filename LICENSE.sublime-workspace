@@ -1,0 +1,250 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"for"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/joprez/Projects/gnc2000/Dockerfile",
+		"/home/joprez/Projects/gnc2000/docker/docker-compose.yml",
+		"/home/joprez/Downloads/SpssExport-1672156209/spss.sps",
+		"/home/joprez/Downloads/SpssExport-1670356382 (1)/spss.txt",
+		"/home/joprez/Downloads/SpssExport-1672156209/spss.txt",
+		"/home/joprez/Desktop/log.txt",
+		"/home/joprez/Downloads/SpssExport-1671057073/spss.txt",
+		"/home/joprez/Downloads/SpssExport-1671131988/spss.txt",
+		"/home/joprez/Downloads/sps (2).sps",
+		"/home/joprez/Desktop/spss.sps",
+		"/home/joprez/Desktop/spss.txt",
+		"/home/joprez/.cache/.fr-iDuJ5j/spss.txt",
+		"/home/joprez/.cache/.fr-o1WugA/spss.txt",
+		"/home/joprez/.cache/.fr-rD859x/spss.txt",
+		"/home/joprez/.cache/.fr-qzDasi/spss.txt",
+		"/home/joprez/.cache/.fr-r4vp2s/spss.txt",
+		"/home/joprez/.cache/.fr-sLPgVu/spss.txt",
+		"/home/joprez/.cache/.fr-fzygfZ/spss.txt",
+		"/home/joprez/Downloads/org.gnu.pspp.flatpakref",
+		"/home/joprez/.cache/.fr-NoQ9CT/spss.txt",
+		"/home/joprez/Downloads/SpssExport-1671057073/spss.sav",
+		"/home/joprez/Downloads/SpssExport-1671057073/spss.sps",
+		"/home/joprez/Downloads/SpssExport-1671131988/spss.sav",
+		"/home/joprez/Downloads/SpssExport-1671131988/spss.sps",
+		"/home/joprez/Downloads/SpssExport-1671055250/spss.sav",
+		"/home/joprez/Downloads/SpssExport-1671055250/spss.sps",
+		"/home/joprez/Downloads/SpssExport-1671055250/spss.txt",
+		"/home/joprez/Downloads/export-114 (1).pdf",
+		"/home/joprez/Downloads/export-114.pdf",
+		"/home/joprez/Projects/app/.env",
+		"/home/joprez/Desktop/Siatra/angry.txt",
+		"/home/joprez/Desktop/Siatra/license.txt",
+		"/home/joprez/Desktop/Siatra/list.txt",
+		"/home/joprez/Desktop/Siatra/roll.txt",
+		"/tmp/fz3temp-2/test.php",
+		"/home/joprez/Projects/app/application/surveybuilder/controllers/ExplorerController.php",
+		"/tmp/fz3temp-2/.htaccess",
+		"/home/joprez/Projects/app/application/surveybuilder/views/phoenix/scripts/explorer/share-tab-v2.phtml",
+		"/home/joprez/Projects/app/application/surveybuilder/views/phoenix/scripts/explorer/reportviewpartials/share-tab.phtml",
+		"/home/joprez/Projects/app/application/surveybuilder/views/phoenix/scripts/explorer/all-export-modal.phtml",
+		"/home/joprez/Projects/app/html_surveybuilder/public/dist/components/22.js",
+		"/home/joprez/Projects/bln-parlament-cms/src/Repository/BannerNotificationRepository.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Controller/BannerNotificationController.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Admin/BannerNotificationAdmin.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Block/AppointmentContentBlockService.php",
+		"/tmp/vpn.sh",
+		"/home/joprez/Downloads/Host al2 (1)",
+		"/etc/openfortivpn/config",
+		"/home/joprez/Downloads/types-of-erros.log",
+		"/home/joprez/Downloads/appointments (3).ics",
+		"/home/joprez/Projects/bln-parlament-cms/src/Application/Sonata/UserBundle/Entity/User.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Migrations/Version20211029154759.php",
+		"/home/joprez/Downloads/appointments_ics_LIVE.ics",
+		"/home/joprez/Downloads/appointments (1).ics",
+		"/home/joprez/Downloads/appointments_ics (5).ics",
+		"/home/joprez/Downloads/my-awesome-calendar.ics",
+		"/home/joprez/Projects/bln-parlament-cms/src/Migrations/Version20210907190432.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Migrations/Version20210903133105.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Migrations/Version20210706193017.php",
+		"/home/joprez/Projects/bln-parlament-cms/src/Entity/NewsletterText.php",
+		"/home/joprez/Downloads/nl.html",
+		"/home/joprez/Desktop/backup/public_html/info.php",
+		"/home/joprez/Desktop/rasta.csv",
+		"/home/joprez/Desktop/not_found.tpl",
+		"/home/joprez/Documents/mayo prints/MAYO IMPRESO",
+		"/home/joprez/Projects/bln-parlament-cms/credentials.json",
+		"/home/joprez/Projects/bln-parlament-cms/.env.dist",
+		"/home/joprez/Projects/bln-parlament-cms/.env",
+		"/home/joprez/Projects/bln-parlament-cms/.docker/mysql/mysql.cnf",
+		"/home/joprez/Projects/bln-parlament-cms/src/Entity/Delegate.php",
+		"/home/joprez/Projects/bln-parlament-cms/vendor/jms/serializer/tests/Fixtures/Person.php",
+		"/home/joprez/Projects/bln-parlament-cms/vendor/fzaninotto/faker/src/Faker/Provider/Person.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "LICENSE.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"delegate",
+				"src/Entity/Delegate.php"
+			],
+			[
+				"person",
+				"vendor/fzaninotto/faker/src/Faker/Provider/Person.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 382.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
