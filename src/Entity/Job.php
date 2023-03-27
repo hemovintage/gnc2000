@@ -22,17 +22,6 @@ class Job
     #[ORM\Column(type: 'string', length: 255)]
     private $description;
 
-    #[ORM\ManyToOne(targetEntity: Vehicle::class, inversedBy: 'jobs')]
-    private $vehicle;
-
-    #[ORM\ManyToOne(targetEntity: Technician::class, inversedBy: 'jobs')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $technician;
-
-    #[ORM\ManyToOne(targetEntity: JobType::class, inversedBy: 'jobs')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $jobType;
-
     #[ORM\Column(type: 'float', nullable: true)]
     private $price;
 
@@ -76,42 +65,6 @@ class Job
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getVehicle(): ?Vehicle
-    {
-        return $this->vehicle;
-    }
-
-    public function setVehicle(?Vehicle $vehicle): self
-    {
-        $this->vehicle = $vehicle;
-
-        return $this;
-    }
-
-    public function getTechnician(): ?Technician
-    {
-        return $this->technician;
-    }
-
-    public function setTechnician(?Technician $technician): self
-    {
-        $this->technician = $technician;
-
-        return $this;
-    }
-
-    public function getJobType(): ?JobType
-    {
-        return $this->jobType;
-    }
-
-    public function setJobType(?JobType $jobType): self
-    {
-        $this->jobType = $jobType;
 
         return $this;
     }

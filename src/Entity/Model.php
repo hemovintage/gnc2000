@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ModelRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ModelRepository::class)]
@@ -21,12 +19,8 @@ class Model
     #[ORM\Column(type: 'boolean')]
     private $enabled;
 
-    #[ORM\OneToMany(mappedBy: 'model', targetEntity: Brand::class)]
-    private $brands;
-
     public function __construct()
     {
-        $this->brands = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -58,33 +52,8 @@ class Model
         return $this;
     }
 
-    /**
-     * @return Collection<int, Brand>
-     */
-    public function getBrands(): Collection
+    public function __toString(): string
     {
-        return $this->brands;
-    }
-
-    public function addBrand(Brand $brand): self
-    {
-        if (!$this->brands->contains($brand)) {
-            $this->brands[] = $brand;
-            $brand->setModel($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBrand(Brand $brand): self
-    {
-        if ($this->brands->removeElement($brand)) {
-            // set the owning side to null (unless already changed)
-            if ($brand->getModel() === $this) {
-                $brand->setModel(null);
-            }
-        }
-
-        return $this;
+        return $this->getName();
     }
 }

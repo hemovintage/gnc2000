@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\VehicleRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: VehicleRepository::class)]
@@ -33,16 +31,8 @@ class Vehicle
     #[ORM\Column(type: 'boolean')]
     private $enabled;
 
-    #[ORM\ManyToOne(targetEntity: Brand::class, inversedBy: 'vehicles')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $Brand;
-
-    #[ORM\OneToMany(mappedBy: 'vehicle', targetEntity: Job::class)]
-    private $jobs;
-
     public function __construct()
     {
-        $this->jobs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -118,48 +108,6 @@ class Vehicle
     public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
-
-        return $this;
-    }
-
-    public function getBrand(): ?Brand
-    {
-        return $this->Brand;
-    }
-
-    public function setBrand(?Brand $Brand): self
-    {
-        $this->Brand = $Brand;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Job>
-     */
-    public function getJobs(): Collection
-    {
-        return $this->jobs;
-    }
-
-    public function addJob(Job $job): self
-    {
-        if (!$this->jobs->contains($job)) {
-            $this->jobs[] = $job;
-            $job->setVehicle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeJob(Job $job): self
-    {
-        if ($this->jobs->removeElement($job)) {
-            // set the owning side to null (unless already changed)
-            if ($job->getVehicle() === $this) {
-                $job->setVehicle(null);
-            }
-        }
 
         return $this;
     }

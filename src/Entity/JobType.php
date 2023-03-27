@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\JobTypeRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: JobTypeRepository::class)]
@@ -24,15 +22,8 @@ class JobType
     #[ORM\Column(type: 'boolean')]
     private $enabled;
 
-    #[ORM\OneToMany(mappedBy: 'jobType', targetEntity: Job::class)]
-    private $jobs;
-
-    #[ORM\ManyToOne(targetEntity: JobSubType::class, inversedBy: 'jobTypes')]
-    private $jobSubType;
-
     public function __construct()
     {
-        $this->jobs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -76,45 +67,8 @@ class JobType
         return $this;
     }
 
-    /**
-     * @return Collection<int, Job>
-     */
-    public function getJobs(): Collection
+    public function __toString(): string
     {
-        return $this->jobs;
-    }
-
-    public function addJob(Job $job): self
-    {
-        if (!$this->jobs->contains($job)) {
-            $this->jobs[] = $job;
-            $job->setJobType($this);
-        }
-
-        return $this;
-    }
-
-    public function removeJob(Job $job): self
-    {
-        if ($this->jobs->removeElement($job)) {
-            // set the owning side to null (unless already changed)
-            if ($job->getJobType() === $this) {
-                $job->setJobType(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getJobSubType(): ?JobSubType
-    {
-        return $this->jobSubType;
-    }
-
-    public function setJobSubType(?JobSubType $jobSubType): self
-    {
-        $this->jobSubType = $jobSubType;
-
-        return $this;
+        return $this->getName();
     }
 }
