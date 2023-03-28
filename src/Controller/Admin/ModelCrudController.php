@@ -17,7 +17,7 @@ class ModelCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-       // yield AssociationField::new("brand");
+        yield AssociationField::new("brand");
         yield TextField::new("name");
         yield BooleanField::new("enabled");
     }

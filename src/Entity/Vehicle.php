@@ -6,6 +6,7 @@ use App\Repository\VehicleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: VehicleRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Vehicle
 {
     #[ORM\Id]
@@ -30,6 +31,12 @@ class Vehicle
 
     #[ORM\Column(type: 'boolean')]
     private $enabled;
+
+    #[ORM\Column(type: 'datetime')]
+    private $createdAt;
+
+    #[ORM\Column(type: 'datetime')]
+    private $updatedAt;
 
     public function __construct()
     {
@@ -110,5 +117,18 @@ class Vehicle
         $this->enabled = $enabled;
 
         return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 }

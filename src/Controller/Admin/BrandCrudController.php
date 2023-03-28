@@ -3,11 +3,13 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Brand;
-use Symfony\Component\Routing\Annotation\Route;
+// use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
-use Symfony\Component\HttpFoundation\Response;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+// use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+// use Symfony\Component\HttpFoundation\Response;
+// use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class BrandCrudController extends AbstractCrudController
 {
@@ -23,14 +25,16 @@ class BrandCrudController extends AbstractCrudController
     //      return $this->redirect($adminUrlGenerator->setController(BrandCrudController::class)->generateUrl());
     // }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        // return [
+        //     IdField::new('id'),
+        //     TextField::new('title'),
+        //     TextEditorField::new('description'),
+        // ];
+        yield TextField::new("name");
+        yield BooleanField::new("enabled");
     }
-    */
+    
 }
