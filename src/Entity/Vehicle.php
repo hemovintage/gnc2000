@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use App\Repository\VehicleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,6 +38,10 @@ class Vehicle
 
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
+
+    #[ORM\ManyToOne(targetEntity: Model::class, inversedBy: 'vehicles')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $model;
 
     public function __construct()
     {
@@ -130,5 +135,27 @@ class Vehicle
     public function setUpdatedAtValue(): void
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getModel(): ?Model
+    {
+        return $this->model;
+    }
+
+    public function setModel(?Model $model): self
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
     }
 }

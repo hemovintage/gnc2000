@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ModelRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -31,8 +33,12 @@ class Model
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
 
+    #[ORM\OneToMany(mappedBy: 'model', targetEntity: Vehicle::class, orphanRemoval: true)]
+    private $vehicles;
+
     public function __construct()
     {
+        $this->vehicles = new ArrayCollection();
     }
     
     public function getId(): ?int
@@ -66,7 +72,7 @@ class Model
 
     public function __toString(): string
     {
-        return $this->getName();
+        return $this->brand->getName() . ' - ' . $this->getName();
     }
 
     public function getBrand(): ?Brand
@@ -92,6 +98,36 @@ class Model
     public function setUpdatedAtValue(): void
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    /**
+     * @return Collection<int, Vehicle>
+     */
+    public function getVehicles(): Collection
+    {
+        return $this->vehicles;
+    }
+
+    public function addVehicle(Vehicle $vehicle): self
+    {
+        if (!$this->vehicles->contains($vehicle)) {
+            $this->vehicles[] = $vehicle;
+            $vehicle->setModel($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVehicle(Vehicle $vehicle): self
+    {
+        if ($this->vehicles->removeElement($vehicle)) {
+            // set the owning side to null (unless already changed)
+            if ($vehicle->getModel() === $this) {
+                $vehicle->setModel(null);
+            }
+        }
+
+        return $this;
     }
 
 }
