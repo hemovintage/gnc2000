@@ -1,6 +1,8 @@
-# 🐳 Docker + PHP 8.1 + MySQL + Nginx + Symfony 6.1 Boilerplate
+# This project in symfony 6 has been mounted in the container created by Ger86 (https://github.com/ger86/symfony-docker) 
 
-## Description
+## 🐳 Docker + PHP 8.1 + MySQL + Nginx + Symfony 6.1 Boilerplate
+
+### Description
 
 This is a complete stack for running Symfony 6.1 into Docker containers using docker-compose tool with [docker-sync library](https://docker-sync.readthedocs.io/en/latest/).
 
@@ -13,7 +15,7 @@ It is composed by 4 containers:
 
 ## Installation
 
-1. 😀 Clone this rep.
+~~1. 😀 Clone this rep.~~ 
 
 2. Create the file `./.docker/.env.nginx.local` using `./.docker/.env.nginx` as template. The value of the variable `NGINX_BACKEND_DOMAIN` is the `server_name` used in NGINX.
 
@@ -31,7 +33,7 @@ DATABASE_URL=mysql://app_user:helloworld@db:3306/app_db?serverVersion=8.0.23
 
 You could change the name, user and password of the database in the `env` file at the root of the project.
 
-## To learn more
+### To learn more
 
 I have recorded a Youtube session explaining the different parts of this project. You could see it here:
 
