@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TechnicianRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TechnicianRepository::class)]
@@ -28,9 +30,13 @@ class Technician
     #[ORM\Column(type: 'boolean')]
     private $enabled;
 
+    #[ORM\OneToMany(mappedBy: 'technician', targetEntity: Job::class)]
+    private $jobs;
+
         public function __construct()
-    {
-    }
+        {
+            $this->jobs = new ArrayCollection();
+        }
 
     public function getId(): ?int
     {
@@ -93,6 +99,36 @@ class Technician
     public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Job>
+     */
+    public function getJobs(): Collection
+    {
+        return $this->jobs;
+    }
+
+    public function addJob(Job $job): self
+    {
+        if (!$this->jobs->contains($job)) {
+            $this->jobs[] = $job;
+            $job->setTechnician($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJob(Job $job): self
+    {
+        if ($this->jobs->removeElement($job)) {
+            // set the owning side to null (unless already changed)
+            if ($job->getTechnician() === $this) {
+                $job->setTechnician(null);
+            }
+        }
 
         return $this;
     }

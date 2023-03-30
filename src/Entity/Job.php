@@ -36,6 +36,9 @@ class Job
     #[ORM\JoinColumn(nullable: false)]
     private $customer;
 
+    #[ORM\ManyToOne(targetEntity: Technician::class, inversedBy: 'jobs')]
+    private $technician;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +124,18 @@ class Job
     public function setCustomer(?Customer $customer): self
     {
         $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getTechnician(): ?Technician
+    {
+        return $this->technician;
+    }
+
+    public function setTechnician(?Technician $technician): self
+    {
+        $this->technician = $technician;
 
         return $this;
     }
