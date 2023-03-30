@@ -32,6 +32,10 @@ class Job
     #[ORM\JoinColumn(nullable: false)]
     private $vehicle;
 
+    #[ORM\ManyToOne(targetEntity: Customer::class, inversedBy: 'jobs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $customer;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +109,18 @@ class Job
     public function setVehicle(?Vehicle $vehicle): self
     {
         $this->vehicle = $vehicle;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
 
         return $this;
     }

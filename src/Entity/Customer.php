@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use DateTime;
 use App\Repository\CustomerRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
@@ -35,6 +37,14 @@ class Customer
 
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
+
+    #[ORM\OneToMany(mappedBy: 'customer', targetEntity: Job::class)]
+    private $jobs;
+
+    public function __construct()
+    {
+        $this->jobs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -123,5 +133,35 @@ class Customer
     public function setUpdatedAtValue(): void
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    /**
+     * @return Collection<int, Job>
+     */
+    public function getJobs(): Collection
+    {
+        return $this->jobs;
+    }
+
+    public function addJob(Job $job): self
+    {
+        if (!$this->jobs->contains($job)) {
+            $this->jobs[] = $job;
+            $job->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJob(Job $job): self
+    {
+        if ($this->jobs->removeElement($job)) {
+            // set the owning side to null (unless already changed)
+            if ($job->getCustomer() === $this) {
+                $job->setCustomer(null);
+            }
+        }
+
+        return $this;
     }
 }
