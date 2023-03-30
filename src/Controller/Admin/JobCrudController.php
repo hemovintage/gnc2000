@@ -20,6 +20,7 @@ class JobCrudController extends AbstractCrudController
     {
         yield AssociationField::new("customer");
         yield AssociationField::new("vehicle");
+        yield AssociationField::new("technician");
         yield DateField::new("expirationDate");
         yield TextField::new("description");
         yield TextField::new("price");

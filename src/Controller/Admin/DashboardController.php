@@ -6,6 +6,7 @@ use App\Entity\Brand;
 use App\Entity\Customer;
 use App\Entity\Job;
 use App\Entity\Model;
+use App\Entity\Technician;
 use App\Entity\Vehicle;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -52,6 +53,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Vehicle', 'fa fa-home', Vehicle::class);
         yield MenuItem::linkToCrud('Customer', 'fa fa-home', Customer::class);
         yield MenuItem::linkToCrud('Job', 'fa fa-home', Job::class);
+        yield MenuItem::linkToCrud('Techinician', 'fa fa-home', Technician::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

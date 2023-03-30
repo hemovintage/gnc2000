@@ -139,6 +139,6 @@ class Vehicle
 
     public function __toString(): string
     {
-        return $this->model;
+        return sprintf('%s - %s', $this->numberPlate, $this->model);
     }
 }
