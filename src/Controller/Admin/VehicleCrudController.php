@@ -20,10 +20,10 @@ class VehicleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         
-        yield TextField::new("firstname");
-        yield TextField::new("lastname");
-        yield TextField::new("phone");
-        yield TextField::new("email");
+        // yield TextField::new("firstname");
+        // yield TextField::new("lastname");
+        // yield TextField::new("phone");
+        // yield TextField::new("email");
         yield AssociationField::new("model");
         yield TextField::new("numberPlate");
         yield BooleanField::new("enabled");

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Brand;
+use App\Entity\Customer;
 use App\Entity\Job;
 use App\Entity\Model;
 use App\Entity\Vehicle;
@@ -49,6 +50,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Brand', 'fa fa-home', Brand::class);
         yield MenuItem::linkToCrud('Model', 'fa fa-home', Model::class);
         yield MenuItem::linkToCrud('Vehicle', 'fa fa-home', Vehicle::class);
+        
+        yield MenuItem::linkToCrud('Customer', 'fa fa-home', Customer::class);
         //yield MenuItem::linkToCrud('Job', 'fa fa-home', Job::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
