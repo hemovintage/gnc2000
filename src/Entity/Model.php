@@ -72,7 +72,7 @@ class Model
 
     public function __toString(): string
     {
-        return $this->brand->getName() . ' - ' . $this->getName();
+        return sprintf('%s - %s', $this->brand->getName(), $this->name);
     }
 
     public function getBrand(): ?Brand

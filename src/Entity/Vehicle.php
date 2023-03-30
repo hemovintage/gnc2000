@@ -6,7 +6,9 @@ use DateTime;
 use App\Repository\VehicleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\StringType;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Node\Expr\Cast\String_;
 
 #[ORM\Entity(repositoryClass: VehicleRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -133,5 +135,10 @@ class Vehicle
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->model;
     }
 }

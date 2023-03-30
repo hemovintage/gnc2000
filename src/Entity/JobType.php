@@ -69,6 +69,6 @@ class JobType
 
     public function __toString(): string
     {
-        return $this->getName();
+        return sprintf('%s', $this->name);
     }
 }
