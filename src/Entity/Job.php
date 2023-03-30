@@ -28,6 +28,10 @@ class Job
     #[ORM\Column(type: 'string', length: 30, nullable: true)]
     private $status;
 
+    #[ORM\ManyToOne(targetEntity: Vehicle::class, inversedBy: 'jobs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $vehicle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +93,18 @@ class Job
     public function setStatus(?string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getVehicle(): ?Vehicle
+    {
+        return $this->vehicle;
+    }
+
+    public function setVehicle(?Vehicle $vehicle): self
+    {
+        $this->vehicle = $vehicle;
 
         return $this;
     }
