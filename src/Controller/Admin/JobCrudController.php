@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Job;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class JobCrudController extends AbstractCrudController
@@ -12,14 +14,13 @@ class JobCrudController extends AbstractCrudController
         return Job::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield DateField::new("expirationDate");
+        yield TextField::new("description");
+        yield TextField::new("price");
+        yield TextField::new("status");
     }
-    */
+
 }
